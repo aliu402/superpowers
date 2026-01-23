@@ -1,6 +1,8 @@
 # Superpowers 快速开始指南
 
-## 一分钟安装
+## 安装方式选择
+
+### 方式 1：从官方市场安装（简单）
 
 ```bash
 # 1. 注册市场
@@ -12,6 +14,33 @@ claude plugin install superpowers@superpowers-marketplace
 # 3. 开始使用
 claude
 ```
+
+### 方式 2：从 Fork 本地安装（推荐用于开发）
+
+如果你 fork 了项目（如 `https://github.com/aliu402/superpowers`）：
+
+```bash
+# 1. 克隆你的 fork
+git clone https://github.com/aliu402/superpowers.git
+cd superpowers
+
+# 2. 配置 Claude Code
+# 编辑 ~/.claude/settings.json (macOS/Linux) 或 %USERPROFILE%\.claude\settings.json (Windows)
+# 添加：
+{
+  "pluginMarketplaces": {
+    "superpowers-local": "file:///完整路径/superpowers/.claude-plugin/marketplace.json"
+  },
+  "enabledPlugins": {
+    "superpowers@superpowers-local": true
+  }
+}
+
+# 3. 开始使用
+claude
+```
+
+📖 **详细说明：** [Fork 版本安装指南](INSTALL-FORK.zh-CN.md)
 
 ## 常用命令
 
