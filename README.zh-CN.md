@@ -28,24 +28,33 @@ Superpowers 是为编程助手 AI 设计的完整软件开发工作流系统，�
 
 ### Claude Code（通过插件市场）
 
-在 Claude Code 中，首先注册市场：
+#### 快速安装
+
+在 Claude Code CLI 终端中运行：
 
 ```bash
-/plugin marketplace add obra/superpowers-marketplace
+# 1. 注册插件市场
+claude plugin marketplace add obra/superpowers-marketplace
+
+# 2. 安装插件
+claude plugin install superpowers@superpowers-marketplace
+
+# 3. 验证安装
+claude plugin list
 ```
 
-然后从这个市场安装插件：
+#### 详细安装指南
 
-```bash
-/plugin install superpowers@superpowers-marketplace
-```
+完整的安装步骤、配置说明和故障排除，请参见：
+
+📖 **[Claude Code 详细安装指南](docs/INSTALL.zh-CN.md)**
 
 ### 验证安装
 
 检查命令是否出现：
 
 ```bash
-/help
+claude help
 ```
 
 ```
