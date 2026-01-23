@@ -2,6 +2,14 @@
 
 本指南适用于从 fork 的仓库（如 `https://github.com/aliu402/superpowers`）安装 Superpowers。
 
+## ⚠️ 重要提示
+
+**不要使用 Claude Code 的 "Add Marketplace" UI！**
+
+Claude Code 的 UI 不支持 Windows 绝对路径。你需要**直接编辑配置文件**。
+
+详细说明请参见：📖 [安装问题修复指南](INSTALL-FORK-FIX.zh-CN.md)
+
 ## 为什么从本地安装？
 
 当你 fork 了 Superpowers 项目后：
@@ -26,6 +34,12 @@ git remote add upstream https://github.com/obra/superpowers.git
 
 ### 2. 配置 Claude Code
 
+**⚠️ 重要：不要使用 UI，直接编辑配置文件！**
+
+Claude Code 的 "Add Marketplace" UI 不支持 Windows 绝对路径。
+
+#### 打开配置文件
+
 编辑 Claude Code 配置文件：
 
 **Windows:**
@@ -37,6 +51,41 @@ notepad %USERPROFILE%\.claude\settings.json
 ```bash
 nano ~/.claude/settings.json
 ```
+
+#### 如果文件不存在
+
+创建文件并添加以下内容：
+
+```json
+{
+  "pluginMarketplaces": {
+    "superpowers-local": "file:///D:/My-MCP-Servers/superpowers/.claude-plugin/marketplace.json"
+  },
+  "enabledPlugins": {
+    "superpowers@superpowers-local": true
+  }
+}
+```
+
+#### 如果文件已存在
+
+在现有内容中添加 marketplace 和 plugin 配置：
+
+```json
+{
+  "pluginMarketplaces": {
+    "existing-marketplace": "...",
+    "superpowers-local": "file:///D:/My-MCP-Servers/superpowers/.claude-plugin/marketplace.json"
+  },
+  "enabledPlugins": {
+    "existing-plugin@existing-marketplace": true,
+    "superpowers@superpowers-local": true
+  },
+  "theme": "dark"
+}
+```
+
+**注意：** 将路径 `D:/My-MCP-Servers/superpowers` 替换为你实际的项目路径。
 
 ### 3. 添加本地市场配置
 
