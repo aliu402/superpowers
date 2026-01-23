@@ -29,5 +29,12 @@ When skills reference tools you don't have, substitute your equivalent tools:
 - Superpowers skills: ~/.codex/superpowers/skills/
 - Personal skills: ~/.codex/skills/ (override superpowers when names match)
 
+**语言要求 (Language Requirements):**
+- 所有对外输出和生成的文档必须使用中文（简体中文）
+- 代码注释使用中文
+- Git 提交信息使用中文
+- 代码本身（变量名、函数名）使用英文
+- 技术术语可保留英文，但需提供中文解释
+
 IF A SKILL APPLIES TO YOUR TASK, YOU DO NOT HAVE A CHOICE. YOU MUST USE IT.
 </EXTREMELY_IMPORTANT>
